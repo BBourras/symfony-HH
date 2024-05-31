@@ -1,0 +1,68 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block body %}
+
+	{# L'ARTICLE avec titre, date, email' #}
+	<article>
+		<h1>{{ post.title }}</h1>
+		<p class="text-muted fst-italic">
+			Publié le {{ post.publishedAt | date('d-m-Y \\à\\ H:i:s') }}
+			par {{ post.author.name }}
+		</p>
+		<p>{{ post.body | nl2br }}</p>
+	</article>
+
+	{# PARTAGER l'article. Lien vers un formulaire #}
+	<p> <a href="{{ path('app_posts_share', {slug: post.slug}) }}">Partager cet article</a> </p>
+
+
+	<hr>
+	{# LES COMMENTAIRES ... avec le nombre (en sous-titre), l'auteur, l'email, la date #}
+<section>
+	{% if (comments | length>0) %}
+		<h5>{{ pluralize(comments | length , 'commentaire', 'commentaires') }}</h5> 		
+	{% endif %}
+
+	{% for c in comments %}
+		<article class="{{ loop.index is odd ? "bg-secondary bg-opacity-10" }} px-3 py-1 rounded">
+			<h5 class="mt-3 fs-6 text-muted ">
+				{{ loop.index }}
+				- <strong>{{ c.name }}</strong> :
+				<a href="mailto: {{ c.email }} "> {{ c.email }}</a>	. {{ c.createdAt | date }}
+			</h5>
+			<p> {{ c.body|nl2br }} </p>
+		</article>
+	{% else %}
+		<p>A ce jour, aucun commentaire pour cet article</p>
+	{% endfor %}
+</section>
+
+	<hr>
+	{# LE FORMULAIRE pour créer des commentaires #}
+	<h5>Ajouter un commentaire</h5>
+	<section class="mt-3">
+		<div class="row">
+			<div class="col-md-4">
+				{{ form_start(commentForm) }}
+				{{ form_widget(commentForm) }}
+				<button type="submit" class="btn btn-primary"> Envoyer</button>
+				{{ form_end(commentForm) }}
+			</div>
+		</div>
+	</section>
+	<hr>
+
+	{# Les articles avec TAGS SIMILAIRES#}
+	<section class="mt-3">
+		<h5>Articles avec des tags similaires</h5>
+		{% for post in similarPosts %}
+			<p> <a href="{{ path('app_posts_show', {slug: post.slug})}}"> {{post.title}} </a> </p>
+		{% else %}
+			Il n'y a pas encore d'articles avec des tags similaires
+		{% endfor %}
+	</section>
+	<hr>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<h4>✨ Quoi de neuf ? </h4> 
+<p class="text-muted fst-italic">  🧾 A ce jour,  {{pluralize(total_posts(), 'article', 'articles') }} publiés</p>
+
+<div>
+    <h6> ⏱️ Les derniers articles </h6>
+    <ul>
+        {% for post in latest_posts(4) %}
+        <li>
+            <a href=" {{ path('app_posts_show', { slug: post.slug}) }}">
+            {{ post.title}}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div>
+    <h6> 🤺 Les articles les plus commentés </h6> 
+        <ul>
+        {% for post in most_commented_posts(4) %}
+        <li>
+            <a href=" {{ path('app_posts_show', { slug: post.slug}) }}">
+            {{ post.title}}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

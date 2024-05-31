@@ -1,0 +1,16 @@
+{%  extends 'layout/base.html.twig' %}
+
+{% block title %}  Partager  {% endblock %}
+
+{% block body %}
+    <h2 class="mb-5">Partager l'article intitulé "{{ post.title }}"</h2>
+
+    {# LE FORMULAIRE POUR PARTAGER un article #}
+        <div class="col-md-8">
+            {{ form_start(form, {'attr':{'novalidate':'novalidate' }} ) }}
+            {{ form_widget(form) }}
+                <button type="submit" class="btn btn-primary w-100"  >Envoyer</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

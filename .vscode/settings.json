@@ -1,0 +1,126 @@
+{
+  "window.zoomLevel": 0, // Permet de zoomer, pratique si vous faites une présentation
+
+  // Apparence
+  // -- Editeur
+  "workbench.startupEditor": "none",
+  "editor.minimap.size": "fill",
+  "breadcrumbs.enabled": false,
+  // -- Sidebar
+  "workbench.tree.indent": 22, // Indente plus pour plus de clarté dans la sidebar
+  "workbench.tree.renderIndentGuides": "always",
+  // -- Code
+  "editor.occurrencesHighlight": "off",
+  "editor.renderWhitespace": "trailing", // On voit les espaces en fin de ligne
+
+  // Thème
+  "editor.fontFamily": "'JetBrains Mono', 'Fira Code', 'Operator Mono Lig', monospace",
+  // "editor.fontLigatures": true,  // Pour par ex, grouper en un seul signe  = et >  NON
+  "editor.fontSize": 13,
+  "editor.lineHeight": 27, // Pour la hauteur de ligne
+  "workbench.colorTheme": "Winter is Coming (Dark Blue - No Italics)", // choix des icônes « material » (plugin)
+  "material-icon-theme.hidesExplorerArrows": true, // si on veut cacher les flèches de l’explorateur
+
+  //eslintl
+  "eslint.format.enable": true,
+  "eslint.validate": ["javascript", "typescript", "html"],
+
+  // Ergonomie
+  "editor.wordWrap": "on",
+  "editor.suggest.insertMode": "replace", // L'autocomplétion remplace le mot en cours (au lieu de l’insérer)
+  "editor.acceptSuggestionOnCommitCharacter": false, // Evite par ex que l'autocomplét°soit accepté lors d'un .
+  "editor.linkedEditing": true, // Qd on change un élt HTML, change automatiquement la balise fermante
+  "explorer.autoReveal": true, //  surligne le fichier ouvert ds colonne explorateur (ici, false)
+  "explorer.confirmDragAndDrop": false, // Pas de confirmation pour déplacer déposer
+  "workbench.editor.enablePreview": false, // Ici, évite qu’un clic sur un fichier l'ouvre (le suivant le referme)
+  "emmet.triggerExpansionOnTab": true, // permet d’étendre un tag
+  // Fichiers
+  "files.autoSave": "afterDelay", // sauvegarde (possibilité : afterDelay OU onFocusChange)
+  "files.defaultLanguage": "markdown", //  fichier créé par défaut  (ici, markdown)
+  "files.exclude": {
+    // on peut choisir des fichiers à exclure (ici, idea)
+    "**/.idea": true
+  },
+  // Langages
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js", // pour ne pas formater automatiquement à la sauvegarde
+  "editor.formatOnPaste": false, // pour ne pas formater automatiquement au collage
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.sortJSON": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+
+  // Extensions
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.accessibilitySupport": "off",
+
+  "accessibility.signals.lineHasError": {
+    "sound": "off"
+  },
+  "accessibility.signals.lineHasBreakpoint": {
+    "sound": "off"
+  },
+  "accessibility.signals.terminalQuickFix": {
+    "sound": "off"
+  },
+  "accessibility.signals.onDebugBreak": {
+    "sound": "off"
+  },
+  "accessibility.signals.noInlayHints": {
+    "sound": "off"
+  },
+  "accessibility.signals.taskCompleted": {
+    "sound": "off"
+  },
+  "accessibility.signals.taskFailed": {
+    "sound": "off"
+  },
+  "accessibility.signals.terminalCommandFailed": {
+    "sound": "off"
+  },
+  "accessibility.signals.notebookCellCompleted": {
+    "sound": "off"
+  },
+  "accessibility.signals.notebookCellFailed": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineInserted": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineDeleted": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineModified": {
+    "sound": "off"
+  },
+
+  "screencastMode.fontSize": 50,
+  "editor.minimap.enabled": false,
+  "symfony-vscode.phpExecutablePath": "C:\\wamp64\\bin\\php\\php8.2.0\\php.exe",
+  "window.autoDetectHighContrast": false,
+  "[twig]": {
+    "editor.defaultFormatter": "mblode.twig-language-2"
+  }
+}
